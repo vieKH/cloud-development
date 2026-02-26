@@ -11,7 +11,7 @@ public class Generator
             Randomizer.Seed = new Random(seed.Value);
 
         var faker = new Faker<Product>()
-            .RuleFor(x => x.Id, f => f.IndexFaker + 1)
+            .RuleFor(x => x.Id, f => f.IndexFaker)
             .RuleFor(x => x.NameProduct, f => f.Commerce.ProductName())
             .RuleFor(x => x.Category, f => f.Commerce.Categories(1)[0])
             .RuleFor(x => x.Quantity, f => f.Random.Int(0, 1000))
